@@ -1,5 +1,6 @@
 const path = require('path')
 const projectConfig = require('./project-config');
+const webpackApiMocker = require('mocker-api');
 module.exports = {   
   devServer: {
     overlay: {
@@ -35,5 +36,19 @@ module.exports = {
           return args;
         });
     });
-  }
+  },
+   // prettier-ignore-end
+   crossorigin: '',
+   devServer: {
+     allowedHosts: [
+       '.foo.cn',
+       ...projectConfig.dev.allowedHosts,
+     ],
+     before(app) {
+       if (projectConfig.dev.mock) {
+         webpackApiMocker(app, path.resolve('./mock/index.js'));
+       }
+     },
+     proxy: projectConfig.dev.proxy,
+   },
 }
