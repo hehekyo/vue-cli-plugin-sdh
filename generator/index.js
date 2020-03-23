@@ -32,10 +32,10 @@ module.exports = (api, options, rootOptions) => {
     }
 
     // 公共基础目录和文件
-    // api.render('./template');
+    api.render('./template');
 
     // 配置文件
-    api.render({
-        './src/main.js': './template/src/main.js',        
-    });
+    // api.render({
+    //     './src/main.js': './template/src/main.js',        
+    // });
 }
