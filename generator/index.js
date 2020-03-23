@@ -36,6 +36,6 @@ module.exports = (api, options, rootOptions) => {
 
     // 配置文件
     api.render({
-        './src/main.js': './template/src/main.s',        
+        './src/main.js': './template/src/main.js',        
     });
 }
