@@ -1,5 +1,4 @@
 import IBase from './interface'
-import {passport} from '../config'
 class H5 extends IBase {
   name = 'h5'  
 }
