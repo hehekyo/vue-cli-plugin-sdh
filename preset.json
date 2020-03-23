@@ -1,9 +1,6 @@
 {
     "useConfigFiles": true,    
-    "plugins": {
-      "@vue/cli-plugin-babel": {},      
-      "@vue/cli-plugin-router": {},
-      "@vue/cli-plugin-vuex": {}
+    "plugins": {      
     }
   }
   
