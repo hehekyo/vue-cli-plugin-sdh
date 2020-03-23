@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+//mys
 Vue.config.productionTip = false
 new Vue({
   render: h => h(App)

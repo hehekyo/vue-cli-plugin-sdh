@@ -32,12 +32,10 @@ module.exports = (api, options, rootOptions) => {
     }
 
     // 公共基础目录和文件
-    api.render('./template');
+    // api.render('./template');
 
     // 配置文件
     api.render({
-        // './.eslintrc.js': './template/_eslintrc.js',
-        // './.gitignore': './template/_gitignore',
-        // './.postcssrc.js': './template/_postcssrc.js'
+        './src/main.js': './template/src/main.s',        
     });
 }
