@@ -1,7 +1,12 @@
 const path = require('path')
 const projectConfig = require('./project-config');
+const appServerHost = process.env.APP_HOST || '/';
+const isDev = process.env.NODE_ENV === 'development';
 const webpackApiMocker = require('mocker-api');
-module.exports = {   
+module.exports = {
+  publicPath: isDev ?
+    '/' :
+    `${appServerHost}`,  
   devServer: {
     overlay: {
       warnings: false,
