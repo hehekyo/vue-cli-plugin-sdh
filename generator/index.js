@@ -7,6 +7,8 @@ module.exports = (api, options, rootOptions) => {
             "keymirror": "^0.1.1"
         },
         devDependencies: {
+            "node-sass": "^4.13.1",
+            "sass-loader": "^8.0.2",
             "mockjs": "^1.0.1-beta3",
             "postcss-px2rem": "^0.3.0",
             '@types/express': '^4.16.0',
