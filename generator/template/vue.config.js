@@ -6,13 +6,7 @@ const webpackApiMocker = require('mocker-api');
 module.exports = {
   publicPath: isDev ?
     '/' :
-    `${appServerHost}`,  
-  devServer: {
-    overlay: {
-      warnings: false,
-      errors: false
-    }
-  },
+    `${appServerHost}`,   
   lintOnSave: false,
   configureWebpack: config => {
     if (process.env.NODE_ENV !== 'production') return
@@ -45,6 +39,10 @@ module.exports = {
    // prettier-ignore-end
    crossorigin: '',
    devServer: {
+    overlay: {
+      warnings: false,
+      errors: false
+    },
      allowedHosts: [
        '.foo.cn',
        ...projectConfig.dev.allowedHosts,
