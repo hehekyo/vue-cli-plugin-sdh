@@ -1,9 +1,9 @@
 NODE_ENV="production"
 VUE_APP_ENV="online"
 
-APP_HOST="<%- onlineAppServerHost %>"
+APP_HOST="" 
 
-FTP_HOST="<%- onlineFTPServerHost %>"
-FTP_PORT="<%- onlineFTPServerPort %>"
-FTP_USERNAME="<%- onlineFTPServerUsername %>"
-FTP_PASSWORD="<%- onlineFTPServerPassword %>"
+FTP_HOST="" 
+FTP_PORT="" 
+FTP_USERNAME=""
+FTP_PASSWORD=""
