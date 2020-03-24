@@ -1,10 +1,17 @@
 module.exports = (api, options, rootOptions) => {
-    // 安装一些基础公共库
-    api.extendPackage({
-        dependencies: {
-            "axios": "^0.18.0",
-            "lodash": "^4.17.10",
-            "keymirror": "^0.1.1"
+
+    /**
+     * --modern 使用现代模式构建应用，为现代浏览器交付原生支持的 ES2015 代码，并生成一个兼容老浏览器的包用来自动回退
+     * --mode test, sandbox,online 对应.env.test 不同环境模式
+     * 
+     * 
+    */
+
+    const pkg = {
+        scripts: {
+            'build:test': 'cross-env APP_NS=test vue-cli-service build --dest dist/test --mode test --modern',
+            'build:sandbox': 'cross-env APP_NS=sandbox vue-cli-service build --dest dist/sandbox --mode sandbox --modern',
+            'build:online': 'cross-env APP_NS=online vue-cli-service build --dest dist/online --mode online --modern',
         },
         devDependencies: {
             "node-sass": "^4.13.1",
@@ -17,8 +24,16 @@ module.exports = (api, options, rootOptions) => {
             'mockjs': '^1.0.1-beta3',
             'express': '^4.16.4',
             'mocker-api': '^1.6.6'
-        }
-    });
+        },
+        dependencies: {
+            "axios": "^0.18.0",
+            "lodash": "^4.17.10",
+            "keymirror": "^0.1.1"
+        },
+        babel: {},
+    };
+    // 安装一些基础公共库
+    api.extendPackage(pkg)
 
     // 安装 vuex
     // if (options.vuex) {
